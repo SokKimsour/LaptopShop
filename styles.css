@@ -629,6 +629,7 @@ img {
   .container .content .featured .product-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 20px;
   }
   .container .content .featured .product-list .product {
     width: 160px;
