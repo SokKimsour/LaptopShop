@@ -566,7 +566,7 @@ img {
   transform: scale(0.98);
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   .hamburger {
     display: block;
     margin-left: auto;
@@ -605,14 +605,17 @@ img {
   /* Service section */
   .services-section .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: 20px;
   }
   .services-section .services-grid .service-card {
-    width: 180px;
+    width: 160px;
   }
   .services-section .services-grid .service-card img {
-    width: 130px;
+    width: 100%;
+  }
+  .services-section .services-grid .service-card h3 {
+    font-size: 15px;
   }
 
   /* responsive for card */
@@ -626,13 +629,14 @@ img {
     height: auto;
   }
   /* shop now */
+
   .container .content .featured .product-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 20px;
   }
   .container .content .featured .product-list .product {
-    width: 160px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
