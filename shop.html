@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASUS CAMBODIA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    /* Style for the 'Detail' button */
+    .btnBuy {
+      display: inline-block;
+      padding: 10px 20px;
+      width: 130px;
+      background-color: rgb(5, 217, 217);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btnBuy:hover {
+      background-color: rgb(3, 163, 163);
+      transform: scale(1.05);
+    }
+
+    .btnBuy:active {
+      background-color: rgb(5, 169, 169);
+      transform: scale(0.98);
+    }
+
+    /* Popup styles (optional) */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .popup-content img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">ASUS</a></div>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="myItem">
+        <i
+          id="cart-icon"
+          style="color: rgb(231, 225, 225)"
+          class="fa-solid fa-cart-arrow-down"
+        ></i>
+        <div class="text">
+          <h4 id="buyNum">0</h4>
+          <span>Cart</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="sidebar">
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="#Tuff">TUFF</a></li>
+          <li><a href="#ROG">ROG</a></li>
+          <li><a href="#Zephyrus">Zephyrus</a></li>
+          <li><a href="#Mouse">Mouse</a></li>
+          <li><a href="#Keyboard">Keyboard</a></li>
+          <li><a href="#headset">Headset</a></li>
+        </ul>
+      </div>
+      <div class="content">
+        <section class="featured" data-aos="fade-up" id="Tuff">
+          <h2>TUFF Gaming</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a3.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a3.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a3.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a3.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a3.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a3.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a3.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a3.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+        <section class="featured" data-aos="fade-up" id="ROG">
+          <h2>Asus ROG</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a1.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a1.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a1.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a1.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a1.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a1.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a1.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a1.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+        <section class="featured" data-aos="fade-up" id="Zephyrus">
+          <h2>ASUS Zephyrus</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a5.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a5.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a5.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a5.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/a5.png" alt="Asus ROG" />
+              <h3>Asus ROG</h3>
+              <p>$999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/a5.png" alt="Asus TUFF" />
+              <h3>Asus TUFF</h3>
+              <p>$699.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/a5.png" alt="Asus Zephyrus" />
+              <h3>Asus Zephyrus</h3>
+              <p>$1999.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/a5.png" alt="Asus Vivobook" />
+              <h3>Asus Vivobook</h3>
+              <p>$499.99</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+        <section class="featured" data-aos="fade-up" id="Mouse">
+          <h2>ASUS Mouse</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/mouse.png" alt="ASUS TUF Gaming M3 Gen II" />
+              <h3>ASUS TUF Gaming M3 Gen II</h3>
+              <p>$20</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+        <section class="featured" data-aos="fade-up" id="Keyboard">
+          <h2>ASUS keyboard</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/keyboard.png" alt="ASUS TUF Gaming K1" />
+              <h3>ASUS TUF Gaming K1</h3>
+              <p>$100</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+        <section class="featured" data-aos="fade-up" id="headset">
+          <h2>ASUS Headset</h2>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+          <div class="product-list">
+            <div class="product" data-aos="flip-left">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="100">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="200">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+            <div class="product" data-aos="flip-left" data-aos-delay="300">
+              <img src="img/headset.png" alt="ASUS TUF Gaming H3" />
+              <h3>ASUS TUF Gaming H3</h3>
+              <p>$30</p>
+              <a href="#" class="btnBuy box-shop2">Detail</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Popup overlay -->
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <span class="close-btn" id="popup-close">&times;</span>
+        <img id="popup-img" src="" alt="Product Image" />
+        <h2 id="popup-title"></h2>
+        <p id="popup-price"></p>
+        <a id="popup-btnBuy" href="#" class="box-shop2 btnBuy">Buy now</a>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

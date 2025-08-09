@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | ASUS CAMBODIA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">ASUS</a></div>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="myItem">
+        <i
+          id="cart-icon"
+          style="color: rgb(231, 225, 225)"
+          class="fa-solid fa-cart-arrow-down"
+        ></i>
+        <div class="text">
+          <h4 id="buyNum">0</h4>
+          <span>Cart</span>
+        </div>
+      </div>
+    </nav>
+
+    <section class="contact-section" data-aos="fade-up">
+      <h1>Contact Us</h1>
+      <p>
+        Have a question or need support? Fill out the form below and our team
+        will get back to you soon.
+      </p>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Email:</strong> info@asus-cambodia.com</p>
+        <p><strong>Phone:</strong> +855 12 345 678</p>
+        <p><strong>Address:</strong> Phnom Penh, Cambodia</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <span>&copy; 2025 ASUS Cambodia. All rights reserved.</span>
+        <span>
+          <a href="#" target="_blank">SV20</a> |
+          <a href="#" target="_blank">Setec_Institute</a> |
+          <a href="contact.html">Contact</a>
+        </span>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Stored Items</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: teal;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: darkslategray;
+      }
+
+      #totalPrice {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+        color: #ffffff;
+      }
+
+      .item-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+      }
+
+      .item-box img {
+        width: 100px;
+        border-radius: 6px;
+      }
+
+      .item-info h3,
+      .item-info p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="logo"><a href="index.html">ASUS</a></div>
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="myItem">
+        <i
+          id="cart-icon"
+          style="color: rgb(231, 225, 225)"
+          class="fa-solid fa-cart-arrow-down"
+        ></i>
+        <div class="text">
+          <h4 id="buyNum">0</h4>
+          <span>Cart</span>
+        </div>
+      </div>
+    </nav>
+    <h1>Saved Items</h1>
+    <button id="clearItemsBtn">Clear Cart (Payment)</button>
+
+    <main>
+      <section id="myContainer">
+        <!-- Items will appear here -->
+      </section>
+      <h2 id="totalPrice">Total: $0</h2>
+    </main>
+
+    <script>
+      const container = document.querySelector("#myContainer");
+      const clearBtn = document.querySelector("#clearItemsBtn");
+      const totalPriceEl = document.getElementById("totalPrice");
+
+      // Clear cart count if it exists
+      const myCountNum = JSON.parse(localStorage.getItem("cartCount"));
+      if (myCountNum) {
+        localStorage.removeItem("cartCount");
+      }
+
+      // Display items
+      function displayItems() {
+        const itemData = JSON.parse(localStorage.getItem("myItems"));
+        container.innerHTML = ""; // clear container first
+        let total = 0;
+
+        if (itemData && Array.isArray(itemData)) {
+          itemData.forEach((items) => {
+            let div = document.createElement("div");
+            div.className = "item-box";
+            div.innerHTML = `
+            <img src="${items.popupImg}" alt="${items.popupTitle}" />
+            <div class="item-info">
+              <h3>${items.popupTitle}</h3>
+              <p>${items.popupPrice}</p>
+            </div>
+          `;
+            container.appendChild(div);
+
+            // Parse and add to total
+            const price = parseFloat(items.popupPrice.replace("$", ""));
+            if (!isNaN(price)) total += price;
+          });
+          totalPriceEl.textContent = `Total: $${total.toFixed(2)}`;
+        } else {
+          container.innerHTML = `<h2 style="text-align:center;">No items</h2>`;
+          totalPriceEl.textContent = `Total: $0`;
+        }
+      }
+
+      // Clear items on click
+      clearBtn.addEventListener("click", () => {
+        localStorage.removeItem("myItems");
+        displayItems(); // refresh UI
+      });
+
+      // On page load
+      displayItems();
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
